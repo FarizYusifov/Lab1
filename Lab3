@@ -1,0 +1,19 @@
+import numpy as np
+
+a = 1  
+b = 2  
+c = 3  
+x_values = np.arange(-1, 6, 1)  # [-1, 5] intervalı, addım 1
+
+def piecewise_function(x, a, b, c):
+    if x < 1:
+        return 2*a*x + 3*b - c
+    elif x == 1:
+        return 3*x**2 + x - 1
+    else:
+        return 4*x + b*x + a
+
+y_values = [piecewise_function(x, a, b, c) for x in x_values]
+
+for x, y in zip(x_values, y_values):
+    print(f"x = {x}, y = {y}")
